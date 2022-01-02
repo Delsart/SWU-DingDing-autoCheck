@@ -1,51 +1,7 @@
-# SWU-DingDing-autoCheck
-![result](/pictures/result.jpg)
-# 简介
-西南大学钉钉自动打卡，基于auto.js，免root。受 [DingDing-Automatic-Clock-in](https://github.com/georgehuan1994/DingDing-Automatic-Clock-in) 启发。
-
-# 功能
-- 自动打卡
-- 通过 QQ 发送反馈结果
-- 通过 QQ 命令操控
-
-# 你需要
-- 一台备用机 (android version >=7.0)
-- 钉钉
-- auto.js
-- QQ 或者 Tim 和一个小号（非必须，反馈和操控用）
-- 定时发送通知的应用，日历或者tasker
-
-# 原理
-通过 auto.js 脚本监听本机通知，自动模拟点击打卡，同时模拟点击发送 QQ 消息进行反馈。
-
-# 其他
-建议将 QQ 和 auto.js 保持锁定后台和电量管理不优化，以免被系统限制后台导致功能不可使用。
-
-因为 auto.js 没有完善的权限检测 api，所以请使用控制命令来全流程测试是否给与的相应的权限。
-
-注释挺详细的，其他的问题可以看源代码来解决和改动。
-
-# 通知控制命令
-通知文本带有即可触发，如 QQ 消息。
-- 健康打卡  
-  -进行健康打卡
-- 查寝  
-  -进行查寝
-- 查询  
-  -查询设备、打卡状态
-- 暂停  
-  -暂停监听定时任务
-- 恢复  
-  -恢复监听定时任务
-- 日志  
-  -发送日志
-
-# 脚本
-```javascript
 /*
  * @Author: Delsart
  * @Date: 2022-01-02 11:30:31
- * @LastEditTime: 2022-01-02 12:07:04
+ * @LastEditTime: 2022-01-02 12:08:55
  * @Description: DingDing-Automatic-Clock-in (Run on AutoJs)
  * @FilePath: \SWU-DingDing-autoCheck\SWU-DingDing-autoCheck.js
  * @URL: https://github.com/Delsart/SWU-DingDing-autoCheck
@@ -569,5 +525,3 @@ function getLogFile(limit) {
   let text = files.read(fileName);
   return text.substring(Math.max(0, text.length - limit));
 }
-
-```
